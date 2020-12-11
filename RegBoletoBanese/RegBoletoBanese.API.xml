@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RegBoletoBanese.API</name>
+    </assembly>
+    <members>
+        <member name="M:RegBoletoBanese.Controllers.RegistrarController.Gerar(System.String,RegBoletoBanese.Models.BoletoRequest)">
+             <summary>
+             Efetua a geração/registro do boleto
+             </summary>
+             <remarks>
+             Exemplo:
+            
+                 POST /Todo
+                 {
+                     "nossoNumero": "8989",
+                     "codigoMoeda": 9,
+                     "dataVencimento": "2020-12-20",
+                     "valorNominal": 100,
+                     "numeroDocumento": "TESTE-001",
+                     "codigoEspecie": 4,
+                     "codigoTipoBaixaDevolucao": 1,
+                     "quantidadeDiasBaixaDevolucao": 1,
+                     "indicadorPagamentoParcial": false,
+                     "valorAbatimento": 0,
+                     "juros": {
+                         "data": "2020-12-21",
+                         "valor": 1.99,
+                         "tipoJuroMora": 1
+                     },
+                     "multa": {
+                         "data": "2020-12-21",
+                         "valor": 1.00,
+                         "tipoMulta": 2
+                     },
+                     "tipoValorAceito": 3,
+                     "flAceite": true,
+                     "idTituloEmpresa": "TESTE-001",
+                     "pagador": {
+                         "tipoPessoa": "F",
+                         "numeroCPFCNPJ": "83829954034",
+                         "nomeOuRazaoSocial": "THIAGO DARLEI SANTANA SOUZA",
+                         "nomeFantasia": "THIAGO DARLEI SANTANA SOUZA",
+                         "endereco": {
+                             "descricaoEndereco": "RUA JOÃO GÊNITON DA COSTA",
+                             "cep": "49095796",
+                             "bairro": "JABOTIANA",
+                             "cidade": "ARACAJU",
+                             "unidadeFederativa": "SE"
+                         }
+                     },
+                     "dataEmissao": "2020-12-10"
+                 }
+            
+             </remarks>
+             <param name="BoletoRequest"></param>
+             <returns>Um boleto registrado</returns>
+             <response code="200">Retorna o código de barras e a linha digitável do boleto registrado.</response>
+             <response code="400">Se o boleto não foi registrado é retornado os possíveis erros.</response>   
+        </member>
+        <member name="M:RegBoletoBanese.Utils.Modulo11(System.String,System.Int32,System.Boolean)">
+             <summary>
+            Esse é o Modulo 11 responsável pelo Nosso Número 
+             </summary>
+             <param name="Valor">Valor a ser inserido para retorno do DV</param>
+             <param name="Base">Base que pode variar de 2 a 9 </param>
+             <returns></returns>
+        </member>
+    </members>
+</doc>
