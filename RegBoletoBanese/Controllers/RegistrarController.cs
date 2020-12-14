@@ -20,11 +20,6 @@ namespace RegBoletoBanese.Controllers
     [ApiController]
     public class RegistrarController : Controller
     {
-        //public const string CLIENT_ID = "fa6d200d-c96f-421e-bc09-6856c2442be5";
-        //public const string SECRET = "c19405ef-2c38-4246-bfd2-8d4b988f2b1d";
-        //public const string URL_TOKEN = "https://sandbox.banese.b.br/autenticacao/oauth/v1/token";
-        //public const string URL_GERAR_BOLETO = "https://sandbox.banese.b.br/cobranca/v1/convenios/13106/boletos";
-
         private readonly IConfiguration _configuration;
         private readonly ITokenService _tokenService;
         private readonly IBoletoService _boletoService;
